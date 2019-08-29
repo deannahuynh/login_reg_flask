@@ -1,0 +1,53 @@
+/* * {
+    border: 1px solid red;
+} */
+
+#wrapper {
+    margin: 40px;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+    margin-top: 40px;
+}
+
+form {
+    width: 700px;
+}
+
+.messages {
+    color: red;
+}
+
+#logout {
+    text-decoration: underline;
+}
+
+.col h3 {
+    text-decoration: underline;
+}
+
+.col h3 span {
+    color: turquoise;
+    text-decoration: underline turquoise;
+}
+
+.post_message {
+    margin: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+label, textarea {
+    margin-right: 10px;
+    
+}
+
+#textarea {
+    display: flex;
+    align-items: flex-start;
+}

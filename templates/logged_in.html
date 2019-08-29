@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">CodingDojo Wall</a>
+            <form class="form-inline">
+                <h2 class="navbar-brand">Welcome, you've been logged in {{ user }}! </h2>
+                <form action="/logout" class="btn btn-outline-success my-2 my-sm-0">
+                    <a id="logout" href="/logout">Logout</a>
+                </form>
+            </form>
+        </nav>
+        <main>
+            <div class="row">
+                <div class="col">
+                    <h3><span>{{ count }}</span> Message(s) for You</h3>
+                    <p>{{ my_messages['senders_first_name'] }} said ...</p>
+                </div>
+                <div class="col">
+                    <h3>Send Messages</h3>
+                    <h3><span>You have sent 12 messages so far</span></h3>
+                    <!-- <div id="post_message"></div> -->
+                    {% for receiver in all_receivers %}
+                        <form class="post_message" action="/success" method="POST">
+                            <label for="message_to_post">{{ receiver['first_name'] }}</label>
+                            <div id="textarea">
+                                <textarea name="message" id="message_text" cols="40" rows="2"></textarea>
+                                <input type="submit" value="Send">
+                            </div>
+                        </form>
+                    {% endfor %}
+                    <!-- </div> -->
+                </div>
+            </div>
+    </main>
+    </div>
+</body>
+</html>
